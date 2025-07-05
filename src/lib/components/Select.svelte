@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { fade } from "svelte/transition"; 
     let {
         select,
         selected,
@@ -11,7 +12,7 @@
     let selectHTML : HTMLElement;
 
     function toggleShow() { show = !show; };
-    function closeShow() { show = false };
+    function closeShow()  { show = false; };
     function clickWindow(event: MouseEvent) {
         if (selectHTML && !selectHTML.contains(event.target as Node)) {
             closeShow();
@@ -30,19 +31,25 @@
 
 </script>
 
+<!-- @component
+- Список выбора 
+ -->
+
 <svelte:window onclick={clickWindow} />
 
 <div bind:this={selectHTML} class="relative">
-    <button onclick={toggleShow} class="{show ? 'text-[#d3863c] border-[#d3863c]' : 'text-[#929292] border-[#929292]'} flex gap-1 cursor-pointer p-1 rounded-sm border hover:border-[#d3863c] hover:text-[#d3863c]">
+    <button onclick={toggleShow} class="{show ? 'text-[var(--color-accent)] border-[var(--color-accent)]' : 'text-[var(--color-gray)] border-[var(--color-gray)]'} flex gap-1 cursor-pointer p-1 rounded-sm border hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]">
         {#if selected?.img }<img src="{selected?.img}" alt="{selected?.optional}" class="">{/if}
         <p>{selected?.optional}</p>
     </button>
 
-    <div class="{show ? 'flex' : 'hidden'} w-max absolute flex-col rounded-sm bg-gray-200 text-[#929292]">
+    {#if show }
+    <div transition:fade={{duration: 150}} class="flex w-max absolute flex-col rounded-sm border-1 border-[var(-color-gray)] bg-[var(--color-header)] text-[var(--color-gray)]">
         {#each select as {optional, img} }
-            <button onclick={() => {setSelected({optional, img})}} class="flex gap-2 p-1 cursor-pointer hover:opacity-50">
+            <button onclick={() => {setSelected({optional, img})}} class="flex gap-2 p-1 cursor-pointer hover:opacity-50 hover:text-[var(--color-accent)]">
                 {#if img }<img src="{img}" alt="{img}">{/if} {optional}
             </button>
         {/each}
     </div>
+    {/if}
 </div>

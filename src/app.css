@@ -1,3 +1,12 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
+
+:root {
+    /* --категория-свойство-вариант */
+    /* --свойство-вариант */
+
+    --color-accent: #d3863c;
+    --color-gray:   #929292;
+    --color-header: #191d26;
+}
