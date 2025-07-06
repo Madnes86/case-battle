@@ -27,10 +27,3 @@
     {/each}
 </nav>
 
-<style>
-    
-    .mobile {
-
-    }
-</style>
-

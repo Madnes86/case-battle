@@ -15,12 +15,12 @@
     } = $props();
 </script>
 
-<!-- @component
-- Социальные сети. Имеет мобильный вариант
- -->
-
 <div class="{classP} {mobile ? 'flex' : 'hidden md:flex h-[80%]'} gap-2 items-center border-y-1 border-[var(--color-accent)]">
     {#each Object.entries(SOCIALS) as [name, link] }
         <a href="{link}"><img src="/icon/{name}" alt="{name}" title={name} class="hover:bg-white"></a>
     {/each}
 </div>
+
+<!-- @component
+- Социальные сети. Имеет мобильный вариант
+ -->

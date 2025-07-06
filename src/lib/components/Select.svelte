@@ -31,10 +31,6 @@
 
 </script>
 
-<!-- @component
-- Список выбора 
- -->
-
 <svelte:window onclick={clickWindow} />
 
 <div bind:this={selectHTML} class="relative">
@@ -53,3 +49,7 @@
     </div>
     {/if}
 </div>
+
+<!-- @component
+- Список выбора 
+ -->

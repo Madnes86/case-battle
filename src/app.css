@@ -10,3 +10,7 @@
     --color-gray:   #929292;
     --color-header: #191d26;
 }
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}

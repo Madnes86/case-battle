@@ -1,10 +1,11 @@
 <script lang="ts">
 	import '../app.css';
-	import Header from "$lib/components/Header.svelte"
+	import { Header, LiveDrop } from '$lib/layout';
 
 	let { children } = $props();
 </script>
 
 	<Header />
+	<LiveDrop />
 
 	{@render children()}
