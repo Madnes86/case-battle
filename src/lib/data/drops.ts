@@ -23,7 +23,7 @@ export const DROPS : {
             steamImg  : `${BASE}/user/2205/1102572/large-686a4c893a618.jpg` 
         },
         { 
-            rarity    : "rgb(159, 139, 255)",
+            rarity    : "rgb(255, 0, 0)",
             itemImg   : `${BASE}/skin/2580/middle-5c793e8ed50a7.png`, 
             itemName  : "StatTrak™ USP-S Сайрекс", 
             fromName  : "upgrade", 
@@ -63,7 +63,7 @@ export const DROPS : {
             steamImg  : `${BASE}/user/2205/1102572/large-686a4c893a618.jpg` 
         },
         {
-            rarity    : "rgb(159, 139, 255)",
+            rarity    : "rgb(255, 215, 0)",
             itemImg   : `${BASE}/skin/3953/middle-5c793f93021c1.png`, 
             itemName  : "★ Спортивные перчатки | Амфибия", 
             fromName  : "CS2 кейс «Перчаточный»",
@@ -73,7 +73,7 @@ export const DROPS : {
             steamImg  : `${BASE}/user/2205/1102572/large-686a4c893a618.jpg` 
         },
         {
-            rarity    : "rgb(159, 139, 255)",
+            rarity    : "rgb(255, 0, 0)",
             itemImg   : `${BASE}/skin/992/middle-5c793ca7cbbd6.png`, 
             itemName  : "★ Нож с лезвием-крюком | Дамасская сталь", 
             fromName  : "«Нож с лезвием-крюком»",
