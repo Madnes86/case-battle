@@ -3,9 +3,14 @@
 	import { slide } from 'svelte/transition';
 	import { onMount } from 'svelte';
 
-    const DROPS_DEL  : number = 3;
-    let windowHeight : number = $state(typeof window !== 'undefined' ? window.innerHeight : 800);
-    let dropsMax     : number = $derived((Math.floor(windowHeight / 100)));
+    // bg opacity ??
+    // alt = ? 
+    // add key ? 
+    // Разделить название item и скин 
+
+    const DROPS_DEL  : number        = 3;
+    let windowHeight : number        = $state(typeof window !== 'undefined' ? window.innerHeight : 800);
+    let dropsMax     : number        = $derived((Math.floor(windowHeight / 100)));
     let hover        : number | null = $state(null);
     let drops = $state(DROPS.slice(0, 4).map(drop => ({ ...drop, id: crypto.randomUUID() })));
 
@@ -35,6 +40,7 @@
     };
 
     onMount(getDrop);
+
 </script>
 
 <svelte:window bind:innerHeight={windowHeight} /> 
@@ -46,7 +52,7 @@
             in:slide={{ duration: 500 }}
             onmouseenter={() => {onEnter(index)}} 
             role="group" 
-            style={`border-color: ${rarity}; background: ${rarity.replace('rgb', 'rgba').replace(')', ', 0.6)')}`}
+            style={`background: ${rarity.replace('rgb', 'rgba').replace(')', ', 0.6)')}`}
             class="{hover != index 
                 ? 'flex flex-col gap-2 justify-center items-center' 
                 : 'hidden'} 

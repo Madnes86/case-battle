@@ -16,9 +16,8 @@
     function update() {
         online = online + Math.floor(Math.random() * 200);
     }
-    function toggleMenu() {
-        show = !show;
-    }
+    function toggleMenu() { show = !show };
+    function closeMenu() { show = false };
 
     $effect(() => {
         if (windowWidth > 800) { show = false; };
@@ -28,13 +27,15 @@
         setInterval(update, 3_000);
     });
 
+    // bag: transition main '/'
+
 </script>
 
 <svelte:window bind:innerWidth={windowWidth} />
 
 <header class="flex pl-[190px] h-[68px] bg-[var(--color-header)]">
     <!-- Logo -->
-    <a id="logo" href="/" onclick={toggleMenu} title="{SLOGAN}" class="fixed top-0 left-0 p-2 w-[190px] h-[68px] flex flex-col gap-1 items-center">
+    <a id="logo" href="/" onclick={closeMenu} title="{SLOGAN}" class="fixed top-0 left-0 p-2 w-[190px] h-[68px] flex flex-col gap-1 items-center">
         <img data-testid="logo" src="/img/logo.svg" alt="{SLOGAN}" class="cursor-pointer">
         <p class="w-full text-center truncate tracking-wide uppercase text-[10px] text-gray-200">{SLOGAN}</p>
     </a>
