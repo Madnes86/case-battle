@@ -31,12 +31,12 @@
 
 </script>   <svelte:window bind:innerWidth={windowWidth} />
 
-<main class="pl-[190px] bg-[var(--color-header)]">
+<main class="pl-[190px] min-h-[calc(100vh-68px)] bg-[var(--color-filter)]">
     <nav class="flex gap-2 justify-center items-center p-2 h-[60px] bg-[var(--color-filter)] text-[var(--color-gray)]">
         <button onclick={searchView} class="hover:opacity-50"><img src="/icon/search.svg" alt=""></button>
         {#if show }<input bind:value={search} placeholder={PLACEHOLDER} type="text" class="w-[200px] h-[30px] bg-[var(--color-header)] text-white">{/if}
         <button class="hover:opacity-50"><img src="/icon/like.svg" alt=""></button>
-        <button onclick={() => {selectedCategory = null}} class="{selectedCategory != null && 'text-[var(--color-accent)]'} hover:opacity-50">clear</button>
+        <button onclick={() => {selectedCategory = null}} class="{selectedCategory != null && 'text-[var(--color-accent)]'} hover:opacity-50"><img src="/icon/clear.svg" alt=""></button>
         {#each categories as category }
             <button onclick={() => {selectedCategory = category}} class="{selectedCategory == category && 'text-[var(--color-accent)]'} text-[15px] hover:opacity-50">{category}</button>
         {/each}
