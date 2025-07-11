@@ -7,7 +7,7 @@
         { icon: "clear", title: "Пользовательское соглашение", href: "" },
         { icon: "clear", title: "Политика безопасности", href: "" },
         { icon: "clear", title: "AML политика", href: "" },
-        { icon: "clear", title: "Вопром - ответ", href: "" },
+        { icon: "clear", title: "Вопром - ответ", href: "faq" },
     ];
 </script>
 

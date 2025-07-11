@@ -28,10 +28,11 @@
         });
     };
 
+    // перевод в uppercase categiry
+
 
 </script>   <svelte:window bind:innerWidth={windowWidth} />
 
-<main class="pl-[190px] min-h-[calc(100vh-68px)] bg-[var(--color-filter)]">
     <nav class="flex gap-2 justify-center items-center p-2 h-[60px] bg-[var(--color-filter)] text-[var(--color-gray)]">
         <button onclick={searchView} class="hover:opacity-50"><img src="/icon/search.svg" alt=""></button>
         {#if show }<input bind:value={search} placeholder={PLACEHOLDER} type="text" class="w-[200px] h-[30px] bg-[var(--color-header)] text-white">{/if}
@@ -51,4 +52,3 @@
         </div>
     {/each}
     </div>
-</main>
