@@ -1,5 +1,6 @@
 <script lang="ts">
     import { ITEMS } from '$lib/data/items';
+    import { user } from '$lib/stores/user';
     const { data } = $props();
     const c = data.c;
 
@@ -30,7 +31,7 @@
         <b class="text-[14px] text-[var(--color-gray)]">{c.category}</b>
         <h1 class="uppercase text-[22px]">«{c.name}»</h1>
     </div>
-    <div class="w-[30vw] h-[30vw] relative flex justify-center items-center">
+    <div class="w-[30vw] h-[30vw] m-10 relative flex justify-center items-center">
         <img src="/img/case/circle.png" alt="" class="absolute top-1/2 left-1/2 -translate-1/2 spin">
         {#if isRolling }
             <div bind:this={reel} class="flex">
@@ -50,10 +51,20 @@
         <img src={c.frontImg} alt="" class="absolute top-1/2 left-1/2 -translate-1/2 z-[1]">
         {/if}
     </div>
-    <div class="flex gap-2">
-        <button onclick={roll} class="px-2 py-1 border-2 border-[var(--color-accent)] text-white bg-[#181412] cursor-pointer hover:opacity-70">ОТКРЫТЬ ЗА {c.price} ₽</button>
-        <button class="px-2 py-1 border-2 border-[var(--color-accent)] text-white bg-[#181412] cursor-pointer hover:opacity-70">БЫСТРО ЗА {c.price} ₽</button>
-    </div>
+    {#if $user}
+        <div class="flex gap-2">
+            <button onclick={roll} class="px-2 py-1 border-2 border-[var(--color-accent)] text-white bg-[#181412] cursor-pointer hover:opacity-70">ОТКРЫТЬ ЗА {c.price} ₽</button>
+            <button class="px-2 py-1 border-2 border-[var(--color-accent)] text-white bg-[#181412] cursor-pointer hover:opacity-70">БЫСТРО ЗА {c.price} ₽</button>
+        </div>
+    {:else}
+        <div class="w-[320px] flex gap-2 p-2 items-center bg-[#00000076] ">
+            <img src="/icon/steam.png" alt="" class="h-1/2">
+            <div class="flex flex-col gap-2 text-white">
+                <p class="text-center">Пожалуйста, авторизуйтесь <b class="text-[var(--color-accent)]">через Steam</b></p>
+                <button class="px-2 py-1 cursor-pointer hover:opacity-70 border-2 border-[var(--color-accent)]">Авторизоваться</button>
+            </div>
+        </div>
+    {/if}
     <section>
         <h1 class="uppercase my-6 text-[20px] text-center text-white">СОДЕРЖИМОЕ КЕЙСА</h1>
         <div class="w-[1120px] flex flex-wrap gap-x-[20px] gap-y-[15px]">
