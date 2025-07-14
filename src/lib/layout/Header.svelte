@@ -21,6 +21,11 @@
 
     $effect(() => {
         if (windowWidth > 800) { show = false; };
+        if (show) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
     });
 
     onMount(() => {
@@ -33,9 +38,9 @@
 
 <svelte:window bind:innerWidth={windowWidth} />
 
-<header class="flex pl-[190px] h-[68px] bg-[var(--color-header)]">
+<header class="flex pl-[190px] h-[68px] md:static fixed w-full z-1 bg-[var(--color-header)]">
     <!-- Logo -->
-    <a id="logo" href="/" onclick={closeMenu} title="{SLOGAN}" class="fixed top-0 left-0 p-2 w-[190px] h-[68px] flex flex-col gap-1 items-center">
+    <a id="logo" href="/" onclick={closeMenu} title="{SLOGAN}" class="fixed top-0 left-0 p-2 w-[190px] h-[68px] z-1 flex flex-col gap-1 items-center bg-[var(--color-header)]">
         <img data-testid="logo" src="/img/logo.svg" alt="{SLOGAN}" class="cursor-pointer">
         <p class="w-full text-center truncate tracking-wide uppercase text-[10px] text-gray-200">{SLOGAN}</p>
     </a>
@@ -58,7 +63,7 @@
 
 <!-- Menu -->
 {#if show }
-<div id="menu" class="fixed flex flex-col justify-center items-center p-2 top-[68px] left-0 w-[100vw] h-[calc(100vh-68px)] bg-[var(--color-header)]">
+<div id="menu" class="fixed z-1 flex flex-col justify-center items-center p-2 top-[68px] left-0 w-[100vw] h-[calc(100vh-68px)] bg-[var(--color-header)]">
     <button class="flex justify-center w-full p-2 bg-black"><img src="/img/steam.png" alt="steam"></button>
     <Nav navs={navs} mobile={true} classP={"mt-2"}/> 
     <Social mobile={true} classP={"hidden sm:flex p-2 mt-2 w-full bg-black justify-center"}/>
