@@ -7,8 +7,8 @@
     const FALSE = false
 </script>
 
-    <div class="xl:w-[1200px] xl:h-[1170px] w-[700px] p-2 m-auto flex flex-col gap-2 items-center text-white">
-        <h1 class="text-white text-[20px]">МОДЕРНИЗАЦИЯ ОРУЖИЯ 2.0</h1>
+    <div class="xl:w-[1200px] xl:h-[1170px] w-[700px] p-2 m-auto flex flex-col gap-2 items-center">
+        <h1 class="text-[20px]">МОДЕРНИЗАЦИЯ ОРУЖИЯ 2.0</h1>
         <div class="w-full flex gap-2">
             <img src="" alt="1"><img src="" alt="2"><img src="" alt="3"><img src="" alt="4">
         </div>

@@ -20,14 +20,28 @@
 
         const itemWidth = 150;
         const scrollTo = itemWidth * Math.floor(scrollItems.length - index - scrollItems.length / 2);
-        reel.style.transition = `transform 7s cubic-bezier(0.1, 0.8, 0.3, 1`;
+        reel.style.transition = `transform 7s cubic-bezier(0.1, 0.8, 0.3, 1)`;
         reel.style.transform = `translateX(-${scrollTo}px)`;
     };
+    function fastRoll() {
+        isRolling = true
+        Object.assign(result, ITEMS[RESULT_INDEX]);
+        const index = ITEMS.findIndex(item => item.name === result.name);
+
+        scrollItems = Array.from({ length: ITEMS.length * 8 }, (_, i) => ITEMS[i % ITEMS.length]);
+
+        const itemWidth = 150;
+        const scrollTo = itemWidth * Math.floor(scrollItems.length - index - scrollItems.length / 2);
+        reel.style.transform = `translateX(-${scrollTo}px)`;
+    }
+    function Auth() {
+        user.set(true);
+    }
 
 </script>
 
 <div class="h-[100vh] flex flex-col items-center bg-no-repeat bg-[url(https://case-battle.life/img/bg_case.webp)] bg-[var(--color-header)]">
-    <div class="text-center text-white">
+    <div class="text-center">
         <b class="text-[14px] text-[var(--color-gray)]">{c.category}</b>
         <h1 class="uppercase text-[22px]">«{c.name}»</h1>
     </div>
@@ -39,7 +53,7 @@
                     <div style="border-color: rgb(41, 49, 63)" class="w-[170px] h-[170px] relative border-1 bg-[url(/img/case/bg-base.jpg)]">
                         <img src={img} alt="" class="h-2/3 m-auto">
                         <b class="absolute left-0 top-1/2 py-1 px-4 bg-[var(--color-filter)] text-[var(--color-accent)]">{price} ₽</b>
-                        <div style="border-bottom: 4px solid {rarity}" class="truncate p-2 text-[13px] text-white">
+                        <div style="border-bottom: 4px solid {rarity}" class="truncate p-2 text-[13px]">
                             <b>{name}</b>
                             <p>{skin}</p>
                         </div>
@@ -53,26 +67,26 @@
     </div>
     {#if $user}
         <div class="flex gap-2">
-            <button onclick={roll} class="px-2 py-1 border-2 border-[var(--color-accent)] text-white bg-[#181412] cursor-pointer hover:opacity-70">ОТКРЫТЬ ЗА {c.price} ₽</button>
-            <button class="px-2 py-1 border-2 border-[var(--color-accent)] text-white bg-[#181412] cursor-pointer hover:opacity-70">БЫСТРО ЗА {c.price} ₽</button>
+            <button onclick={roll} class="px-2 py-1 border-2 border-[var(--color-accent)] bg-[#181412] cursor-pointer hover:opacity-70">ОТКРЫТЬ ЗА {c.price} ₽</button>
+            <button onclick={fastRoll} class="px-2 py-1 border-2 border-[var(--color-accent)] bg-[#181412] cursor-pointer hover:opacity-70">БЫСТРО ЗА {c.price} ₽</button>
         </div>
     {:else}
         <div class="w-[320px] flex gap-2 p-2 items-center bg-[#00000076] ">
             <img src="/icon/steam.png" alt="" class="h-1/2">
-            <div class="flex flex-col gap-2 text-white">
+            <div class="flex flex-col gap-2">
                 <p class="text-center">Пожалуйста, авторизуйтесь <b class="text-[var(--color-accent)]">через Steam</b></p>
-                <button class="px-2 py-1 cursor-pointer hover:opacity-70 border-2 border-[var(--color-accent)]">Авторизоваться</button>
+                <button onclick={Auth} class="px-2 py-1 cursor-pointer hover:opacity-70 border-2 border-[var(--color-accent)]">Авторизоваться</button>
             </div>
         </div>
     {/if}
     <section>
-        <h1 class="uppercase my-6 text-[20px] text-center text-white">СОДЕРЖИМОЕ КЕЙСА</h1>
+        <h1 class="uppercase my-6 text-[20px] text-center">СОДЕРЖИМОЕ КЕЙСА</h1>
         <div class="w-[1120px] flex flex-wrap gap-x-[20px] gap-y-[15px]">
             {#each ITEMS as { img, price, name, skin, rarity }}
                 <div style="border-color: rgb(41, 49, 63)" class="w-[170px] h-[170px] relative border-1 bg-[url(/img/case/bg-base.jpg)]">
                     <img src={img} alt="" class="h-2/3 m-auto">
                     <b class="absolute left-0 top-1/2 py-1 px-4 bg-[var(--color-filter)] text-[var(--color-accent)]">{price} ₽</b>
-                    <div style="border-bottom: 4px solid {rarity}" class="truncate p-2 text-[13px] text-white">
+                    <div style="border-bottom: 4px solid {rarity}" class="truncate p-2 text-[13px]">
                         <b>{name}</b>
                         <p>{skin}</p>
                     </div>
