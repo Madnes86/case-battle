@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from "svelte";
     import { Nav, Odometer, Select, Social } from '$lib/components';
+    import { user } from '$lib/stores/user';
     
     const SLOGAN       : string = "У нас выйгрывают";
     const ONLINE_TITLE : string = "Пользователей онлайн";
@@ -18,6 +19,7 @@
     }
     function toggleMenu() { show = !show };
     function closeMenu() { show = false };
+    function Auth() { user.set(true) }; 
 
     $effect(() => {
         if (windowWidth > 800) { show = false; };
@@ -31,8 +33,6 @@
     onMount(() => {
         setInterval(update, 3_000);
     });
-
-    // bag: transition main '/'
 
 </script>
 
@@ -56,8 +56,8 @@
         <Social />
         <Select select={CARRENCY_SELECT} selected={{ optional : "RUB" }}/>
         <Select select={LANG_SELECT}/>
-        <button data-testid="auth" class="hidden md:flex cursor-pointer"><img src="/img/steam.png" alt="steam"></button>
-        <button onclick={toggleMenu} class="flex md:hidden text-white">menu</button>
+        <button onclick={Auth} data-testid="auth" class="hidden md:flex cursor-pointer"><img src="/img/steam.png" alt="steam"></button>
+        <button onclick={toggleMenu} class="flex md:hidden">menu</button>
     </div>
 </header>
 

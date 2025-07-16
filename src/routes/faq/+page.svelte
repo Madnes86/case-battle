@@ -22,8 +22,7 @@
                 border-4 border-[var(--color-filter)] rounded-full font-bold bg-[var(--color-accent)]">{index + 1}</span>
                 <button 
                 onclick={() => {openAnswer(index)}} 
-                class="w-full flex justify-between items-center gap-2
-                cursor-pointer hover:opacity-90">
+                class="w-full flex justify-between items-center gap-2 click">
                     <h3 class="text-left font-bold text-[18px] text-[var(--color-accent)]">{question}</h3>
                     <img src="/icon/arrow-down.svg" alt="" class="{isShow ? 'rotate-180' : ''} transition-all duration-300">
                 </button>

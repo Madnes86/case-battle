@@ -54,7 +54,7 @@
         <Select select={CARRENCY_SELECT} selected={{ optional : "RUB" }}/>
         <Select select={LANG_SELECT}/>
         <button data-testid="auth" class="hidden md:flex cursor-pointer"><img src="/img/steam.png" alt="steam"></button>
-        <button onclick={toggleMenu} class="flex md:hidden text-white">menu</button>
+        <button onclick={toggleMenu} class="flex md:hidden">menu</button>
     </div>
 </header>
 

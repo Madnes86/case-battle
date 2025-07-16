@@ -3,7 +3,7 @@
 	import { slide } from 'svelte/transition';
 	import { onMount } from 'svelte';
 
-    // bg opacity ??
+    // bg opacity ?? 
     // alt = ? 
     // add key ? 
     // Разделить название item и скин 
@@ -45,7 +45,7 @@
 
 <svelte:window bind:innerHeight={windowHeight} /> 
 
-<aside class="hidden md:flex fixed left-0 top-[68px] w-[190px] flex-col gap-[1px]">
+<aside onmouseleave={onLeave} class="hidden md:flex fixed left-0 top-[68px] w-[190px] flex-col gap-[1px]">
     {#each drops as { id, rarity, itemImg, itemName, fromName, fromLink, fromImg, steamLink, steamImg }, index (id)}
         <div class="relative">
             <div 

@@ -67,15 +67,15 @@
     </div>
     {#if $user}
         <div class="flex gap-2">
-            <button onclick={roll} class="px-2 py-1 border-2 border-[var(--color-accent)] bg-[#181412] cursor-pointer hover:opacity-70">ОТКРЫТЬ ЗА {c.price} ₽</button>
-            <button onclick={fastRoll} class="px-2 py-1 border-2 border-[var(--color-accent)] bg-[#181412] cursor-pointer hover:opacity-70">БЫСТРО ЗА {c.price} ₽</button>
+            <button onclick={roll} class="px-2 py-1 border-2 border-[var(--color-accent)] bg-[#181412] click">ОТКРЫТЬ ЗА {c.price} ₽</button>
+            <button onclick={fastRoll} class="px-2 py-1 border-2 border-[var(--color-accent)] bg-[#181412] click">БЫСТРО ЗА {c.price} ₽</button>
         </div>
     {:else}
         <div class="w-[320px] flex gap-2 p-2 items-center bg-[#00000076] ">
             <img src="/icon/steam.png" alt="" class="h-1/2">
             <div class="flex flex-col gap-2">
                 <p class="text-center">Пожалуйста, авторизуйтесь <b class="text-[var(--color-accent)]">через Steam</b></p>
-                <button onclick={Auth} class="px-2 py-1 cursor-pointer hover:opacity-70 border-2 border-[var(--color-accent)]">Авторизоваться</button>
+                <button onclick={Auth} class="px-2 py-1 click border-2 border-[var(--color-accent)]">Авторизоваться</button>
             </div>
         </div>
     {/if}

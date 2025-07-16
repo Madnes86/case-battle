@@ -42,7 +42,7 @@
     {#if show }
     <div transition:fade={{duration: 150}} class="flex w-max absolute flex-col rounded-sm border-1 border-[var(-color-gray)] bg-[var(--color-header)] text-[var(--color-gray)]">
         {#each select as {optional, img} }
-            <button onclick={() => {setSelected({optional, img})}} class="flex gap-2 p-1 cursor-pointer hover:opacity-50 hover:text-[var(--color-accent)]">
+            <button onclick={() => {setSelected({optional, img})}} class="flex gap-2 p-1 click hover:text-[var(--color-accent)]">
                 {#if img }<img src="{img}" alt="{img}">{/if} {optional}
             </button>
         {/each}
