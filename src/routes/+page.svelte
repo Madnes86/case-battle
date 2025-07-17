@@ -2,6 +2,8 @@
     import { CASES } from '$lib/data/cases';
     import { Case } from '$lib/components';
     import { user } from '../lib/stores/user';
+    import { language } from '$lib/stores/settings';
+	import { onMount } from 'svelte';
 
     // Search
     const PLACEHOLDER : string = "Что ищем?";
@@ -35,6 +37,31 @@
             selCats = selCats.filter(c => c !== category);
         };
     };
+
+    let translated = $state([]);
+
+    async function translateCases() {
+        const translateNameCase = cases.map(c => c.name);
+        const res = await fetch('/api/translate', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ texts: translateNameCase, from: 'ru', to: 'en'})
+        });
+        translated = await res.json();
+        cases = cases.map((c, i) => ({ ...c, name: translated[i]}))
+        console.log(cases)
+    }
+    // onMount(() => { 
+    //     if ($language == 'ENGLISH') {
+    //         translateCases()
+    //     }
+    // });
+    $effect(() => {
+        console.log($language)
+        if ($language === 'ENGLISH') {
+            translateCases()
+        }
+    });
 
 </script>   <svelte:window bind:innerWidth={windowWidth} bind:scrollY={scrollY} />
 

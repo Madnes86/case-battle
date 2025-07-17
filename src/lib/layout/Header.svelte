@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from "svelte";
     import { Nav, Odometer, Select, Social } from '$lib/components';
+    import { language } from '$lib/stores/settings';
     import { user } from '$lib/stores/user';
     
     const SLOGAN       : string = "У нас выйгрывают";
@@ -13,6 +14,8 @@
     // re locate
     let windowWidth : number = $state(0);
     let show : boolean = $state(false);
+
+    let selectedLang = $state({ optional: $language }); 
 
     function update() {
         online = online + Math.floor(Math.random() * 200);
@@ -28,6 +31,7 @@
         } else {
             document.body.style.overflow = '';
         }
+        language.set(selectedLang.optional) // Реактивно записываем в store
     });
 
     onMount(() => {
@@ -55,7 +59,7 @@
     <div class="flex gap-4 w-full p-2 items-center justify-end">
         <Social />
         <Select select={CARRENCY_SELECT} selected={{ optional : "RUB" }}/>
-        <Select select={LANG_SELECT}/>
+        <Select select={LANG_SELECT} bind:selected={ selectedLang }/>
         <button onclick={Auth} data-testid="auth" class="hidden md:flex cursor-pointer"><img src="/img/steam.png" alt="steam"></button>
         <button onclick={toggleMenu} class="flex md:hidden">menu</button>
     </div>

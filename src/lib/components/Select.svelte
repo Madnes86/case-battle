@@ -2,7 +2,7 @@
     import { fade } from "svelte/transition"; 
     let {
         select,
-        selected,
+        selected = $bindable(),
     } : {
         select    : { optional : string, img? : string }[],
         selected? : { optional : string, img? : string },
