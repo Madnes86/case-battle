@@ -9,8 +9,8 @@
     const FALSE = false
 </script>
 
-    <div class="gradient w-full p-2 flex flex-col gap-2 items-center border-1 border-[#333d4f]">
-        <div class="w-full flex justify-between">
+    <div class="gradient w-full flex flex-col gap-2 items-center border-1 border-[#333d4f]">
+        <div class="w-full h-12 p-2 flex justify-between items-center bg-[#090a0e]">
             <p class='whitespace-nowrap'>Мои предметы {2}</p>
             {#if version == 'upgrade'}
                 <div class="flex gap-2 items-center">
@@ -18,9 +18,9 @@
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="{TRUE ? 'var(--color-accent)' : '#333d4f'}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="click"><path d="M12 3v18"/><path d="M3 12h18"/><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
                 </div>
             {:else if version == 'contract'}
-            <button class='flex gap-2'>Цена <Svg name='sort' classP='rotate-90 scale-x-[-1]'/></button>
+            <button class='flex gap-2 click'>Цена <Svg name='sort' classP='rotate-90 scale-x-[-1]'/></button>
             {:else if version == 'log'}
-            <button class='whitespace-nowrap'>
+            <button class='whitespace-nowrap сlick'>
                 <Svg name='money' size={24} />
                 <p class='uppercase'>Продать 5 предметов за {100} ₽</p>
             </button>

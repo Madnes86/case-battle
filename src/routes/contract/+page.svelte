@@ -1,8 +1,18 @@
 <script lang=ts>
-    import { Svg, SelectItems } from '$lib/components';
+    import { onMount } from 'svelte';
+    import { Svg, SelectItems, Select } from '$lib/components';
 
     const TRUE = true
     const FALSE = false
+    let canvas  : HTMLCanvasElement;
+    let ctx     : CanvasRenderingContext2D | null;
+    let color   : string = '#FFF';
+    onMount(() => {
+        if (canvas) {
+            ctx = canvas.getContext('2d');
+        
+        }
+    });
 </script>
 
 <div class="m-auto w-[1200px] flex flex-col gap-2 items-center">
@@ -27,16 +37,27 @@
     <div class="w-full flex gap-2">
         <SelectItems version='contract'/>
 
-        <div class="gradient w-full p-2 flex flex-col gap-2 items-center border-1 border-[#333d4f]">
-            <div class="w-full flex justify-between">
-                <p>Мои предметы {2}</p>
-                <div class="flex gap-2 items-center">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="{FALSE ? 'var(--color-accent)' : '#333d4f'}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="click"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/></svg>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="{TRUE ? 'var(--color-accent)' : '#333d4f'}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="click"><path d="M12 3v18"/><path d="M3 12h18"/><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
-                </div>
+        <div class='gradient w-full flex flex-col gap-2 items-center border border-[#333d4f]'>
+            <div class='w-full h-12 p-2 flex gap-4 justify-between items-center bg-[#090a0e]'>
+                <p class='whitespace-nowrap'>Использовать баланс</p>
+                <Svg name='invest' width={40} height={40} />
+                <input type='range' min='0' max='{100}' value='0' class='w-full bg-[var(--color-accent)]'>
+                <p class='whitespace-nowrap'>{0} ₽</p>
             </div>
-            <div>
-
+            <div class='h-full flex flex-col items-center justify-center gap-4'>
+                <h2 class='uppercase text-center text-[18px]'>Вы получите предмет <br>
+                От <b class='text-[var(--color-accent)]'>{0} ₽</b> До <b class='text-[var(--color-accent)]'>{0} ₽</b></h2>
+                <p class='flex gap-2 items-center text-[18px]'>Цель: <Select select={[{optional: 'random'}, {optional: 'case'}]} /></p>
+                <div class='flex gap-4 items-center'>
+                    <canvas bind:this={canvas} width={300} class='border border-black'></canvas>
+                    <div class='flex flex-col gap-4'>
+                        <Svg name='pencil' classP='click'/>
+                        <Svg name='eraser' stroke='#FFF' classP='click'/>
+                        <Svg name='clear' stroke='#FFF' classP='click'/>
+                        <input type='color' class='w-6 h-6 rounded-full border'>
+                    </div>
+                </div>
+                <button class:click={FALSE} class:disabled={TRUE} class='px-2 py-1 flex gap-2 uppercase border font-medium text-[var(--color-accent)]'><Svg name='sign' />Подписать!</button>
             </div>
         </div>
     </div>

@@ -23,4 +23,14 @@ html, body {
   .click {
     @apply cursor-pointer hover:opacity-70 active:opacity-40
   }
+  .disabled {
+    @apply cursor-no-drop grayscale
+  }
+}
+
+input[type="range"] {
+  appearance: none;
+  height: 4px;
+  background: var(--color-accent);
+  border-radius: 3px;
 }
