@@ -1,3 +1,3 @@
 - [ ] Поменять border-1 на border
 - [ ] Перенести svg в Svg.svelte
-- [ ] Заменить svg pay
+- class:rotate-180={isShow} redact

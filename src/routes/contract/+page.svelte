@@ -30,7 +30,7 @@
         {/each}
     </div>
     <div class="w-full p-2 flex justify-between items-center bg-[var(--color-header)]">
-        <div class="flex gap-2"><img src="/img/pay.png" alt="" class="w-6 h-6"><p class="align-middle">Ваш баланс: <b class="text-[20px]">{60} ₽</b></p><Svg name='add'/></div>
+        <div class="flex gap-2 items-center"><Svg name='wallet' /><p class="align-middle">Ваш баланс: <b class="text-[20px]">{60} ₽</b></p><Svg name='add' classP='click'/></div>
         <h2 class="uppercase text-[var(--color-accent)]">ПОЛОЖИТЕ ЕЩЕ МИНИМУМ {3} ПРЕДМЕТА</h2>
         <p class="uppercase">СУММА КОНТАРКТА: {0} ₽</p>
     </div>

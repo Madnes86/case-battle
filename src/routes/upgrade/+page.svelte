@@ -62,7 +62,7 @@
                         <input placeholder="до ₽" type="text" class="w-24 h-6 text-[12px] border-1 border-[#2F374E] bg-[#0F1318]">
                     {:else}
                         <input placeholder="Поиск" type="text" class="w-32 h-6 text-[12px] border-1 border-[#2F374E] bg-[#0F1318]">
-                        <img src="/icon/search.svg" alt="search" class="click">
+                        <Svg name='search' {...{ class: 'click'}}/>
                     {/if}
                 </div>
                 {#if isDisabled }

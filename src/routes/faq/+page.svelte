@@ -1,6 +1,7 @@
 <script lang="ts">
-    import { FAQS } from '$lib/data/faqs';
-	import { slide } from "svelte/transition";
+    import { FAQS }  from '$lib/data/faqs';
+	import { slide } from 'svelte/transition';
+    import { Svg }   from '$lib/components';
 
     let hover : number | null = $state(null);
     let show  : number | null = $state(null);
@@ -24,7 +25,7 @@
                 onclick={() => {openAnswer(index)}} 
                 class="w-full flex justify-between items-center gap-2 click">
                     <h3 class="text-left font-bold text-[18px] text-[var(--color-accent)]">{question}</h3>
-                    <img src="/icon/arrow-down.svg" alt="" class="{isShow ? 'rotate-180' : ''} transition-all duration-300">
+                    <Svg name='arrow' {...{ class: `transition-all duration-300 ${isShow && 'rotate-180'}` }}/>
                 </button>
                 {#if show == index }<div transition:slide class="p-2 text-justify">{@html answer}</div>{/if}
             </div>
