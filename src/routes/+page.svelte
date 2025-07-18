@@ -51,11 +51,6 @@
         cases = cases.map((c, i) => ({ ...c, name: translated[i]}))
         console.log(cases)
     }
-    // onMount(() => { 
-    //     if ($language == 'ENGLISH') {
-    //         translateCases()
-    //     }
-    // });
     $effect(() => {
         console.log($language)
         if ($language === 'ENGLISH') {
@@ -66,10 +61,10 @@
 </script>   <svelte:window bind:innerWidth={windowWidth} bind:scrollY={scrollY} />
 
     <nav class="{isScrollY ? 'fixed top-0 z-1 bg-[var(--color-header)]' : ''} w-full flex gap-2 items-center px-[7vw] h-[68px] bg-[var(--color-filter)] text-[var(--color-gray)]">
-        <button onclick={searchView} class="click"><Svg name='search'/>></button>
+        <button onclick={searchView} class="click"><Svg name='search' stroke='var(--color-gray)'/></button>
         {#if show }<input bind:value={search} placeholder={PLACEHOLDER} type="text" class="w-[200px] h-[30px] bg-[var(--color-header)]">{/if}
         {#if $user }<button class="click"><Svg name='like' /></button>{/if}
-        {#if selCats.length > 0 }<button onclick={() => {selCats = []}} class="{selCats != null && 'text-[var(--color-accent)]'} click"><img src="/icon/clear.svg" alt=""></button>{/if} 
+        {#if selCats.length > 0 }<button onclick={() => {selCats = []}} class="{selCats != null && 'text-[var(--color-accent)]'} click"><Svg name='clear' /></button>{/if} 
         {#each cats as cat }
             <button onclick={() => {addCategory(cat)}} class="{selCats.includes(cat) && 'text-[var(--color-accent)]'} text-[15px] click">{cat}</button>
         {/each}

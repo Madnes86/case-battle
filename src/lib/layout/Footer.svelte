@@ -18,7 +18,7 @@
         <p>{TEXT}</p>
         <div class="flex flex-col md:flex-row items-center flex-wrap gap-4 font-bold">
             {#each navs as { icon, title, href }}
-                <div class="flex gap-2"><img src="/icon/{icon}.svg" alt="{icon}"><a href="/{href}" class="whitespace-nowrap hover:underline">{title}</a></div>
+                <div class="flex gap-2"><a href="/{href}" class="whitespace-nowrap hover:underline">{title}</a></div>
             {/each}
         </div>
     </div>

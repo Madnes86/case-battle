@@ -1,9 +1,6 @@
 <script lang="ts">
 	import { onMount } from "svelte";
-    import Nav    from "$lib/components/Nav.svelte";
-    import Odometer from "$lib/components/Odometer.svelte";
-    import Select from "$lib/components/Select.svelte";
-    import Social from "$lib/components/Social.svelte";
+    import { Nav, Svg, Odometer, Select, Social } from '$lib/components';
     
     const SLOGAN       : string = "У нас выйгрывают";
     const ONLINE_TITLE : string = "Пользователей онлайн";
@@ -45,7 +42,7 @@
     <Nav navs={navs} />
     <!-- Online -->
     <div title="{ONLINE_TITLE}" class="flex flex-col gap-0.5 p-2 tems-center justify-center cursor-help">
-        <img src="/icon/users.svg" alt="{ONLINE_TITLE}">
+        <Svg name='users' />
         <Odometer value={online}/>
     </div>
 
