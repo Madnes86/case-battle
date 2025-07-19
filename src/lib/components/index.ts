@@ -5,3 +5,4 @@ export { default as Social }    from './Social.svelte';
 export { default as Case }      from './Case.svelte';
 export { default as SelectItems} from './SelectItems.svelte';
 export { default as Svg }       from './Svg.svelte';
+export { default as Faqs }      from './Faqs.svelte';

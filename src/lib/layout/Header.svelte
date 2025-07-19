@@ -58,7 +58,7 @@
 
     <div class="flex gap-4 w-full p-2 items-center justify-end">
         <Social />
-        <Select select={CARRENCY_SELECT} selected={{ optional : "RUB" }}/>
+        <Select select={CARRENCY_SELECT} selected={{ optional : 'RUB' }}/>
         <Select select={LANG_SELECT} bind:selected={ selectedLang }/>
         <button onclick={Auth} data-testid="auth" class="hidden md:flex cursor-pointer"><img src="/img/steam.png" alt="steam"></button>
         <button onclick={toggleMenu} class="flex md:hidden">menu</button>

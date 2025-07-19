@@ -1,2 +1,4 @@
 - [ ] Поменять border-1 на border
 - class:rotate-180={isShow} redact
+- fix: scroll mob header 
+- fix: close menu after select page

@@ -19,8 +19,8 @@
 
     function addDrop() {
         if (hover != null) return;
-        const RANDOM = Math.floor(Math.random() * DROPS.length);
-        const newDrop = { ...DROPS[RANDOM], id: crypto.randomUUID() };
+        const RANDOM = Math.floor(Math.random() * DROPS.length); // Рандом по длине массива
+        const newDrop = { ...DROPS[RANDOM], id: crypto.randomUUID() }; // Рандомное добавление в массив
         let newDrops = [newDrop, ...drops];
         if (newDrops.length > dropsMax + DROPS_DEL) {
             newDrops = newDrops.slice(0, newDrops.length - DROPS_DEL);

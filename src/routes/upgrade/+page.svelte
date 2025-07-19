@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { Select, SelectItems } from '$lib/components';
+    import { Svg, Select, SelectItems } from '$lib/components';
 
     let buttons = ['x2', 'x5', 'x10', '30%', '50%', '75%'];
     let isDisabled : boolean = true;
@@ -50,7 +50,7 @@
                 </div>
             </div>
         </div>
-        <div class="w-full flex gap-2">
+        <div class="w-full flex xl:flex-row flex-col gap-2">
             <SelectItems />
             <div class="gradient w-full h-full p-2 flex flex-col gap-2 border-1 border-[#333d4f]">
                 <div class="w-full h-6 flex gap-2 items-center">

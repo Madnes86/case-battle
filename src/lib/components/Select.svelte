@@ -3,6 +3,7 @@
     let {
         select,
         selected = $bindable(),
+        ...rest
     } : {
         select    : { optional : string, img? : string }[],
         selected? : { optional : string, img? : string },
@@ -33,18 +34,20 @@
 
 <svelte:window onclick={clickWindow} />
 
-<div bind:this={selectHTML} class="relative">
-    <button onclick={toggleShow} class="{show ? 'text-[var(--color-accent)] border-[var(--color-accent)]' : 'text-[var(--color-gray)] border-[var(--color-gray)]'} flex gap-1 cursor-pointer p-1 rounded-sm border hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]">
+<div bind:this={selectHTML} class='relative flex' {...rest}>
+    <button onclick={toggleShow} class='text-[var(--color-accent)] border-[var(--color-accent)] flex gap-1 cursor-pointer px-2 rounded-sm border click'>
         {#if selected?.img }<img src="{selected?.img}" alt="{selected?.optional}" class="">{/if}
         <p>{selected?.optional}</p>
     </button>
 
     {#if show }
-    <div transition:fade={{duration: 150}} class="flex w-max absolute flex-col rounded-sm border-1 border-[var(-color-gray)] bg-[var(--color-header)] text-[var(--color-gray)]">
+    <div transition:fade={{duration: 150}} class='flex flex-col w-max absolute top-8 rounded-sm border border-[var(--color-accent)] bg-[var(--color-header)] text-[var(--color-accent)]'>
         {#each select as {optional, img} }
-            <button onclick={() => {setSelected({optional, img})}} class="flex gap-2 p-1 click hover:text-[var(--color-accent)]">
+            {#if optional != selected?.optional}
+            <button onclick={() => {setSelected({optional, img})}} class='flex gap-2 px-2 click'>
                 {#if img }<img src="{img}" alt="{img}">{/if} {optional}
             </button>
+            {/if}
         {/each}
     </div>
     {/if}

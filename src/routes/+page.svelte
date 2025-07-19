@@ -3,7 +3,6 @@
     import { Case, Svg } from '$lib/components';
     import { user } from '../lib/stores/user';
     import { language } from '$lib/stores/settings';
-	import { onMount } from 'svelte';
 
     // Search
     const PLACEHOLDER : string = "Что ищем?";
