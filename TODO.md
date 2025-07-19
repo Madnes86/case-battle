@@ -1,3 +1,2 @@
 - [ ] Поменять border-1 на border
-- [ ] Перенести svg в Svg.svelte
 - class:rotate-180={isShow} redact
