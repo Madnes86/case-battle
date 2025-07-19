@@ -8,21 +8,16 @@
     const ONLINE_TITLE : string = "Пользователей онлайн";
     const CARRENCY_SELECT : { optional : string, img? : string }[] = [{ optional : "RUB" }, { optional : "USD" }, { optional : "EUR" }]
     const LANG_SELECT     : { optional : string, img? : string }[] = [{ optional : "РУССКИЙ"}, { optional : "ENGLISH"}];
-    let navs : string[] = ["upgrade", "contract", "giveaway", "tournament"];
-    let online : number = $state(3917);
-
-    // re locate
-    let windowWidth : number = $state(0);
-    let show : boolean = $state(false);
-
+    let navs        : string[] = ["upgrade", "contract", "giveaway", "tournament"];
+    let online      : number   = $state(3917);
+    let windowWidth : number   = $state(0);
+    let show        : boolean  = $state(false);
     let selectedLang = $state({ optional: $language }); 
 
-    function update() {
-        online = online + Math.floor(Math.random() * 200);
-    }
-    function toggleMenu() { show = !show };
-    function closeMenu() { show = false };
-    function Auth() { user.set(true) }; 
+    const update = () => online += Math.floor(Math.random() * 200) 
+    const toggleMenu = () => show = !show
+    const closeMenu  = () => show = false
+    const Auth = () => user.set(true)
 
     $effect(() => {
         if (windowWidth > 800) { show = false; };
@@ -34,9 +29,7 @@
         language.set(selectedLang.optional) // Реактивно записываем в store
     });
 
-    onMount(() => {
-        setInterval(update, 3_000);
-    });
+    onMount(() => {setInterval(update, 3_000)});
 
 </script>
 
