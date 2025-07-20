@@ -33,10 +33,8 @@
         const itemWidth = 150;
         const scrollTo = itemWidth * Math.floor(scrollItems.length - index - scrollItems.length / 2);
         reel.style.transform = `translateX(-${scrollTo}px)`;
-    }
-    function Auth() {
-        user.set(true);
-    }
+    };
+    const auth = () => user.set(true)
 
 </script>
 
@@ -75,7 +73,7 @@
             <img src="/icon/steam.png" alt="" class="h-1/2">
             <div class="flex flex-col gap-2">
                 <p class="text-center">Пожалуйста, авторизуйтесь <b class="text-[var(--color-accent)]">через Steam</b></p>
-                <button onclick={Auth} class="px-2 py-1 click border-2 border-[var(--color-accent)]">Авторизоваться</button>
+                <button onclick={auth} class="px-2 py-1 click border-2 border-[var(--color-accent)]">Авторизоваться</button>
             </div>
         </div>
     {/if}

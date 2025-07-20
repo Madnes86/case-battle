@@ -1,3 +1,6 @@
 - [ ] Поменять border-1 на border
 - class:rotate-180={isShow} redact
 - fix: scroll mob header 
+- fix: check main layout bg-header
+- move translateCases()
+- add amination cases 

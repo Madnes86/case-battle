@@ -3,7 +3,7 @@
     import { Svg, Faqs, SelectItems, Select } from '$lib/components';
 
     const RULES : { question: string, answer: string }[] = [{ question: 'ВЫБИРАЙ', answer: 'Выберите минимум 3 своих предмета, взамен которых Вы бы хотели получить один, но дорогой скин.'}, { question: 'ПОДПИСЫВАЙ', answer: 'Чем выше суммарная стоимость предметов в контракте, тем ценнее скин из него выпадет. Чтобы ещё увеличить вероятность выпадения крутого скина Вы можете использовать баланс.'}, { question: 'ВЫИГРЫВАЙ', answer: 'Жмите "Подписать" и получайте один новый скин взамен Ваших. Вы можете вывести его в Steam или использовать далее на сайте, в том числе и повторно в контракте.'} ]
-    const TRUE = true
+    const TRUE  = true
     const FALSE = false
     let canvas  : HTMLCanvasElement;
     let ctx     : CanvasRenderingContext2D | null;
