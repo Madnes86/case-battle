@@ -11,12 +11,11 @@
     onMount(() => {
         if (canvas) {
             ctx = canvas.getContext('2d');
-        
         }
     });
 </script>
 
-<div class='m-auto p-4 pt-10 xl:w-[1200px] flex flex-col gap-2 items-center bg-no-repeat bg-contain bg-[url(https://case-battle.life/img/bg_case.webp)]'>
+<div class='m-auto md:mt-0 mt-[68px] p-4 pt-10 xl:w-[1200px] flex flex-col gap-2 items-center bg-no-repeat bg-contain bg-[url(https://case-battle.life/img/bg_case.webp)] bg-[var(--color-header)]'>
     <div class="w-full grid grid-cols-3">
         <div class="flex gap-2 items-center click"><img src="/icon/contract.svg" alt="" class="w-6"><p class="text-[var(--color-accent)]">Правила игры</p></div>
         <h1 class="uppercase text-[24px] text-center">КОНТРАКТЫ</h1>
