@@ -3,4 +3,6 @@
 - fix: scroll mob header 
 - fix: check main layout bg-header
 - move translateCases()
-- add amination cases 
+- add amination cases
+- add Header menu toggle img
+- add hot key in project 

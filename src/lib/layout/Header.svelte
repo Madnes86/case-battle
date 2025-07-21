@@ -53,7 +53,7 @@
     </div>
 </header>
 
-{#if show }    <!-- Menu -->
+{#if show }
 <div id="menu" class="fixed z-1 flex flex-col justify-center items-center p-2 top-[68px] left-0 w-[100vw] h-[calc(100vh-68px)] bg-[var(--color-header)]">
     <button class="flex justify-center w-full p-2 bg-black"><img src="/img/steam.png" alt="steam"></button>
     <Nav {navs} mobile={true}/>

@@ -10,11 +10,11 @@
     <div class='xl:w-[1300px] xl:h-[1170px] w-[700px] p-2 m-auto flex flex-col gap-2 items-center bg-no-repeat bg-contain bg-[url(https://case-battle.life/img/bg_case.webp)] bg-[var(--color-header)]'>
         <h1 class='text-[20px]'>МОДЕРНИЗАЦИЯ ОРУЖИЯ 2.0</h1>
         <div class='w-full flex gap-2'>
-            <Svg name='info'     stroke={FALSE ? 'var(--color-accent' : '#333d4f'} {...{class: 'click'}}/>
-            <Svg name='settings' stroke={FALSE ? 'var(--color-accent' : '#333d4f'} {...{class: 'click'}} />
-            <Svg name='volume'   stroke={TRUE  ? 'var(--color-accent' : '#333d4f'} {...{class: 'click'}} />
+            <Svg name='info'     stroke={FALSE ? 'var(--color-accent)' : '#333d4f'} {...{class: 'click'}}/>
+            <Svg name='settings' stroke={FALSE ? 'var(--color-accent)' : '#333d4f'} {...{class: 'click'}} />
+            <Svg name='volume'   stroke={TRUE  ? 'var(--color-accent)' : '#333d4f'} {...{class: 'click'}} />
             {#if FALSE}<Svg name='muted'/>{/if}
-            <Svg name='fast'     stroke={FALSE ? 'var(--color-accent' : '#333d4f'} {...{class: 'click'}} />
+            <Svg name='fast'     stroke={FALSE ? 'var(--color-accent)' : '#333d4f'} {...{class: 'click'}} />
         </div>
         <div class='w-full flex gap-2 justify-between'>
             <div class='w-full flex flex-col gap-2'>

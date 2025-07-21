@@ -11,6 +11,11 @@
     --color-header: #191d26;
     --color-filter: #1c212c;
     --color-faq:    #2e313a;
+    --color-blue:   #60ceff;
+    --color-viol:   #baacff;
+    --color-purple: #ec8cf7;
+    --color-green:  #21e41d;
+
 }
 
 *, *::before, *::after {
