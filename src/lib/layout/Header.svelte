@@ -40,8 +40,8 @@
     </a>
     <Nav {navs} />
     <!-- Online -->
-    <div title='{ONLINE_TITLE}' class='flex flex-col gap-0.5 p-2 tems-center justify-center cursor-help'>
-        <img src='/icon/users.svg' alt='{ONLINE_TITLE}'>
+    <div title='{ONLINE_TITLE}' class='flex flex-col gap-0.5 p-2 items-center cursor-help'>
+        <Svg name='users' stroke='var(--color-green)'/>
         <Odometer value={online}/>
     </div>
     <div class='flex gap-4 w-full p-2 items-center justify-end'>
