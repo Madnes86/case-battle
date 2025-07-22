@@ -6,3 +6,4 @@
 - add amination cases
 - add Header menu toggle img
 - add hot key in project 
+- update live drop

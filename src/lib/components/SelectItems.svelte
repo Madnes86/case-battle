@@ -1,5 +1,5 @@
 <script lang='ts'>
-    import { Svg } from '$lib/components'
+    import { Svg, NavList } from '$lib/components'
     let { 
         version = 'upgrade',
     } : { 
@@ -36,15 +36,5 @@
         {/each}
         
         </div>
-        <div class="pb-2 flex flex-col items-center">
-            {#if false }<p>всего страниц: 1</p>{/if} 
-            <div class="flex">
-                <svg viewBox="0 0 24 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 click text-[var(--color-gray)] rotate-90"><path d="m6 9 6 6 6-6" /></svg>
-                {#each [1, 2, 3, 4] as page, index }
-                {@const thisPage = 1 == index +1}
-                <button class:thisPage class="w-[20px] rounded-sm font-medium text-[var(--color-gray)] click hover:bg-black">{page}</button>
-                {/each}
-                <svg viewBox="0 0 24 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 click text-[var(--color-gray)] -rotate-90"><path d="m6 9 6 6 6-6" /></svg>
-            </div>
-        </div>
+        <NavList number={5} />
     </div>

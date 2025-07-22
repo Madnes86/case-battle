@@ -6,3 +6,5 @@ export { default as Case }      from './Case.svelte';
 export { default as SelectItems} from './SelectItems.svelte';
 export { default as Svg }       from './Svg.svelte';
 export { default as Faqs }      from './Faqs.svelte';
+export { default as NavList }   from './NavList.svelte';
+export { default as QuickProfile} from './QuickProfile.svelte';

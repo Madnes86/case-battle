@@ -1,5 +1,5 @@
 <script lang='ts'>
-    import { Svg } from '$lib/components';
+    import { Svg, NavList } from '$lib/components';
 
     let CURRENCY = '₽'
     const cards : {code: string, price: number, name: string, skin: string, skinImg: string, lastTime: data}[] = [
@@ -17,42 +17,44 @@
     ];
 </script>
 
-    <div class='md:mt-0 mt-[68px] w-[1300px] flex flex-col gap-6 justify-center'>
+    <div class='p-4 md:mt-0 mt-[68px] m-auto max-w-[1300px] flex flex-col gap-6 justify-center items-center'>
         <div class='w-full h-10 grid grid-cols-3'>
             <div class='my-auto flex gap-2 text-[var(--color-accent)] click'><Svg name='info'/><p>Правила участия</p></div>
             <h1 class='m-auto uppercase text-[24px]'>Розыгрыши</h1>
         </div>
-        {#each cards as {code, price, name, skin, skinImg, lastTime}}
+        <div class='w-full flex xl:flex-row flex-wrap gap-8 justify-center'>
+            {#each cards as {code, price, name, skin, skinImg, lastTime}}
             <div class='w-90 p-4 flex flex-col gap-2 border-t border-[] bg-[var(--color-filter)]'>
                 <div class='p-1 flex justify-between items-center bg-gradient-to-r from-blue-200/20 to-green-600/40'><span class='flex gap-2 items-center text-[14px] text-[var(--color-gray)]'>{code}<h3 class='text-[16px] text-[var(--color-blue)]'>Розыгрыш каждый час</h3></span><b class='text-[var(--color-green)]'>{price} {CURRENCY}</b></div>
-                <div class='flex justify-between'>
-                    <div class='flex flex-col justify-between'>
-                        <p><b>{name}</b><br>
-                        {skin}</p>
-                        <span class='text-[14px] text-[var(--color-gray)]'>
-                            <p>При пополнении от: <b class='text-[var(--color-accent)]'>{50} {CURRENCY}</b></p>
-                            <p>Осталось: <b class='text-[var(--color-accent)]'>{lastTime}</b></p>
-                        </span>
-                        <div class='w-full h-1.5 rounded-full bg-[var(--color-header)]'><div class='w-1/2 h-1.5 rounded-full bg-[var(--color-blue)]'></div></div>
+                    <div class='flex justify-between'>
+                        <div class='flex flex-col justify-between'>
+                            <p><b>{name}</b><br>
+                            {skin}</p>
+                            <span class='text-[14px] text-[var(--color-gray)]'>
+                                <p>При пополнении от: <b class='text-[var(--color-accent)]'>{50} {CURRENCY}</b></p>
+                                <p>Осталось: <b class='text-[var(--color-accent)]'>{lastTime}</b></p>
+                            </span>
+                            <div class='w-full h-1.5 rounded-full bg-[var(--color-header)]'><div class='w-1/2 h-1.5 rounded-full bg-[var(--color-blue)]'></div></div>
+                        </div>
+                        <div class='relative w-[120px]'>
+                            <img src={skinImg}>
+                            <button class='absolute bottom-0 left-1/2 -translate-x-1/2 px-2 text-[14px] bg-[var(--color-gray)] click'>Участвовать</button>
+                        </div>
                     </div>
-                    <div class='relative w-[120px]'>
-                        <img src={skinImg}>
-                        <button class='absolute bottom-0 left-1/2 -translate-x-1/2 px-2 text-[14px] bg-[var(--color-gray)] click'>Участвовать</button>
+                    <div class='flex flex-col items-center'>
+                        <Svg name='winner' stroke='' {...{fill: 'var(--color-blue)'}}/>
+                        <b class='text-[var(--color-blue)]'>Победители</b>
                     </div>
-                </div>
-                <div class='flex flex-col items-center'>
-                    <Svg name='winner' stroke='' {...{fill: 'var(--color-blue)'}}/>
-                    <b class='text-[var(--color-blue)]'>Победители</b>
-                </div>
-                <div class='flex flex-col gap-2'>
-                {#each winners as {steamImg, steamName, date, code, name, skin, price}}
-                    <div class='px-2 py-1 bg-[var(--color-header)]'>
-                        <div class='flex items-center'><p class='w-full flex gap-2 whitespace-nowrap'><img src={steamImg} class='w-6 rounded-full'>{steamName}</p><p class='mr-2 text-[14px] text-[var(--color-gray)]'>{date}</p><b>{code}</b></div>
-                        <div class='flex justify-between items-center'><p class='whitespace-nowrap text-[14px] text-[var(--color-blue)]'>{name} | {skin}</p><p class='text-[var(--color-accent)]'>{price} {CURRENCY}</p></div>
+                    <div class='flex flex-col gap-2'>
+                    {#each winners as {steamImg, steamName, date, code, name, skin, price}}
+                        <div class='px-3 py-2 bg-[var(--color-header)]'>
+                            <div class='flex items-center'><p class='w-full flex gap-2 whitespace-nowrap'><img src={steamImg} class='w-6 rounded-full'>{steamName}</p><p class='mr-2 text-[14px] text-[var(--color-gray)]'>{date}</p><b class='text-[14px]'>{code}</b></div>
+                            <div class='flex justify-between items-center'><p class='whitespace-nowrap text-[12px] text-[var(--color-blue)]'>{name} | {skin}</p><p class='whitespace-nowrap text-[14px] text-[var(--color-accent)]'>{price} {CURRENCY}</p></div>
+                        </div>
+                    {/each}
                     </div>
-                {/each}
+                    <NavList number={3} />
                 </div>
-                <div>1 2 3 4 5</div>
-            </div>
-        {/each}
+            {/each}
+        </div>
     </div>

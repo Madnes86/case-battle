@@ -20,7 +20,7 @@ export const DROPS : {
             fromLink  : 'https://case-battle.life/case/zorabennet', 
             fromImg   : `${BASE}/case/724/back/middle-68672673a16da.png`, 
             steamLink : `${STEAM_URL}/76561199154970474/`, 
-            steamImg  : `${BASE}/user/2205/1102572/large-686a4c893a618.jpg` 
+            steamImg  : `${BASE}/user/2205/1102572/large-686a4c893a618.jpg`
         },
         { 
             rarity    : '#FF0000',
