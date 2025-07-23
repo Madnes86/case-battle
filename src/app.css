@@ -16,6 +16,14 @@
     --color-purple: #ec8cf7;
     --color-green:  #21e41d;
 
+    --rarity-mil:        65, 105, 225;
+    --rarity-restricted: 138, 43, 226;
+    --rarity-industrial: 39, 155, 240;
+    --rarity-classified: 227, 52, 200;
+    --rarity-covert:     234, 47, 47;
+    --rarity-rare:       233, 191, 12;
+    --rarity-base:       221, 221, 221;
+    --rarity-container:  89, 86, 86;
 }
 
 *, *::before, *::after {

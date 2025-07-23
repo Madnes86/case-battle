@@ -6,3 +6,4 @@
 - add hot key in project 
 - update live drop lg:
 - fix color in live drop
+- update header color

@@ -33,9 +33,9 @@
 
 <svelte:window bind:innerWidth={windowWidth} />
 
-<header class='flex pl-[190px] h-[68px] md:static fixed top-0 w-full z-1 bg-[var(--color-header)]'>
-    <a id='logo' href='/' onclick={closeMenu} title='{SLOGAN}' class='fixed left-0 p-2 w-[190px] h-[68px] z-1 flex flex-col gap-1 items-center bg-[var(--color-header)]'>
-        <img data-testid='logo' src='/img/logo.svg' alt='{SLOGAN}' class='cursor-pointer'>
+<header class='flex lg:pl-[190px] h-[68px] md:static fixed top-0 w-full z-1 bg-[var(--color-header)]'>
+    <a id='logo' href='/' onclick={closeMenu} title='{SLOGAN}' class='lg:fixed left-0 p-2 min-w-[190px] h-[68px] z-1 flex flex-col gap-1 items-center justify-center bg-[var(--color-header)]'>
+        <img src='/img/logo.svg' alt='{SLOGAN}' class='cursor-pointer'>
         <p class='w-full text-center truncate tracking-wide uppercase text-[10px] text-gray-200'>{SLOGAN}</p>
     </a>
     <Nav {navs} />
