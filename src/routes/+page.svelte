@@ -60,8 +60,8 @@
 
 </script>   <svelte:window bind:innerWidth={windowWidth} bind:scrollY={scrollY} />
 
-    <div class='m-auto pb-10 w-[1300px] p-2 flex flex-col gap-2'>
-        <nav class='{isScrollY ? 'fixed top-0 z-1 bg-[var(--color-header)]' : ''} w-full flex gap-2 items-center h-[68px] text-[var(--color-gray)]'>
+    <div class='m-auto pb-10 relative max-w-[1300px] p-2 flex flex-col gap-2 justify-center'>
+        <nav class='{isScrollY ? 'fixed top-0 z-1 bg-[var(--color-main)]' : ''} w-full flex gap-2 items-center h-[68px] text-[var(--color-gray)]'>
             <button onclick={searchView} class='click'><Svg name='search' stroke='var(--color-gray)'/></button>
             {#if show }<input bind:value={search} placeholder={PLACEHOLDER} type='text' class='w-[200px] h-[30px] border border-[#2F374E] bg-[#0F1318]'>{/if}
             {#if $user }<button class='click'><Svg name='like' /></button>{/if}
@@ -70,10 +70,10 @@
                 <button onclick={() => {addCategory(cat)}} class='{selCats.includes(cat) && 'text-[var(--color-accent)]'} text-[15px] click'>{cat}</button>
             {/each}
         </nav>
-        <div class='{isScrollY && 'pt-[68px]'} w-[1250px] flex flex-col items-center'>
+        <div class='{isScrollY && 'pt-[68px]'} flex flex-col'>
         {#each showCats as cat }
             <b transition:fly={{duration: 140}} class='w-full h-[87px] flex justify-center items-center uppercase text-[15px] bg-center bg-no-repeat bg-[url(/img/case/category.png)]'>{cat}</b>
-            <div transition:fly={{duration: 140}} class='flex flex-wrap w-full'>
+            <div transition:fly={{duration: 140}} class='flex flex-wrap w-full justify-center'>
             {#each showCases.filter(c => c.category == cat) as c }
                 <Case {c} />
             {/each}

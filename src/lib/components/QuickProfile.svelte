@@ -14,7 +14,7 @@
 </script>
 
 <div class='{isMobile ? 'w-full p-4 flex bg-black click' : 'w-[200px] h-full md:flex hidden'} gap-2 items-center'>
-    <a href='/' class='{isMobile ? 'gap-4' : 'gap-2'} w-full flex click items-center'>
+    <a href='/profile' class='{isMobile ? 'gap-4' : 'gap-2'} w-full flex click items-center'>
         <img src={steamImg} alt='steamImg' class='{isMobile 
             ? 'h-18' 
             : 'h-11'} -start-1 rounded-full border-2 border-[var(--color-accent)]'>

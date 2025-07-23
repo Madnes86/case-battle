@@ -7,7 +7,7 @@
 
 	<Header />
 	<LiveDrop />
-	<main class="pl-[clamp(100px,14vw,190px)] min-h-[calc(100vh-68px)] bg-[var(--color-header)]">
+	<main class="lg:pl-[190px] md:pl-[clamp(100px,14vw,190px)] min-h-[calc(100vh-68px)] bg-[var(--color-main)]">
 		{@render children()}
 	</main>
 	<Footer />

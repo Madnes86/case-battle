@@ -41,7 +41,7 @@
 
 <svelte:window bind:innerHeight={windowHeight} bind:innerWidth={windowWidth}/> 
 
-<img src='img/live-drops.jpg' alt='' class='w-[clamp(100px,14vw,190px)] h-[68px] object-cover xl:hidden fixed left-0 top-0'>
+<img src='img/live-drops.jpg' alt='' class='lg:w-[190px] w-[clamp(100px,14vw,190px)] h-[68px] object-cover xl:hidden fixed left-0 top-0'>
 
 <aside onmouseleave={outHover} class='hidden md:flex fixed left-0 top-[68px] w-[clamp(100px,14vw,190px)] flex-col gap-[1px] z-2'>
     {#each drops as { id, rarity, itemImg, itemName, fromName, fromLink, fromImg, steamLink, steamImg }, index (id)}
@@ -54,7 +54,7 @@
             class='{hover != index 
                 ? 'flex flex-col gap-2 justify-center items-center' 
                 : 'hidden'} 
-                p-[4%] w-[clamp(100px,14vw,190px)] h-[clamp(80px,10vw,100px)] overflow-hidden text-[12px]'>
+                p-[4%] lg:w-[190px] w-[clamp(100px,14vw,190px)] h-[clamp(80px,10vw,100px)] overflow-hidden text-[12px]'>
                 <img src={itemImg} alt='item img' class='h-[70%] object-contain'>
                 <p class='truncate whitespace-nowrap w-full text-center'>{itemName}</p>
             </div>

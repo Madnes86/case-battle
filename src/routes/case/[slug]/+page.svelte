@@ -38,7 +38,7 @@
 
 </script>
 
-<div class="h-[100vh] flex flex-col items-center bg-no-repeat bg-[url(https://case-battle.life/img/bg_case.webp)] bg-[var(--color-header)]">
+<div class="h-[100vh] flex flex-col items-center bg-no-repeat bg-[url(https://case-battle.life/img/bg_case.webp)]">
     <div class="text-center">
         <b class="text-[14px] text-[var(--color-gray)]">{c.category}</b>
         <h1 class="uppercase text-[22px]">«{c.name}»</h1>

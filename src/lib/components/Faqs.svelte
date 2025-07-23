@@ -17,7 +17,7 @@
         {#each data as { question, answer }, index }
             {@const isHover = hover == index}
             {@const isShow = show == index}
-            <div onmouseenter={() => {onEnter(index)}} onmouseleave={onLeave} role="group" class="{isShow ? 'bg-[var(--color-faq)]' : 'bg-[var(--color-header)]'} hover:bg-[var(--color-faq)] pl-8 p-2 relative">
+            <div onmouseenter={() => {onEnter(index)}} onmouseleave={onLeave} role="group" class="{isShow ? 'bg-[var(--color-faq)]' : 'bg-[var(--color-main)]'} hover:bg-[var(--color-faq)] pl-8 p-2 relative">
                 <span class="{isHover ? 'rotate-360' : ''} transition-all duration-300 
                 px-3 py-1 absolute flex items-center
                 left-0 -translate-1/2 top-1/2 aspect-square 

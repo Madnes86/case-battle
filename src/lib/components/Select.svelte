@@ -41,7 +41,7 @@
     </button>
 
     {#if show }
-    <div transition:fade={{duration: 150}} class='flex flex-col w-max absolute top-8 rounded-sm border border-[var(--color-accent)] bg-[var(--color-header)] text-[var(--color-accent)]'>
+    <div transition:fade={{duration: 150}} class='flex flex-col w-max absolute top-8 z-2 rounded-sm border border-[var(--color-accent)] bg-[var(--color-header)] text-[var(--color-accent)]'>
         {#each select as {optional, img} }
             {#if optional != selected?.optional}
             <button onclick={() => {setSelected({optional, img})}} class='flex gap-2 px-2 click'>

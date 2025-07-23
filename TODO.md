@@ -4,6 +4,4 @@
 - move translateCases()
 - add amination cases
 - add hot key in project 
-- update live drop lg:
-- fix color in live drop
-- update header color
+- поченить monay
