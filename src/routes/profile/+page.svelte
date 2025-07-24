@@ -1,13 +1,14 @@
 <script lang="ts">
-	import { Svg, LabelText } from '$lib/components';
+	import { Svg, LabelText, Button, ProfileCard } from '$lib/components';
 
 	let src = 'https://cdn.case-battle.life/images/user/6813/3406579/thumb-6870bbb493bf5.jpg';
+
 </script>
 
 <div class="m-auto mt-[68px] flex max-w-[1300px] flex-col items-center bg-[var(--color-main)] bg-[url(https://case-battle.life/img/bg_case.webp)] bg-contain bg-no-repeat p-2 md:mt-0">
 	<h1 class="my-4 text-[24px] uppercase">Профиль</h1>
-	<div class="grid grid-cols-2 grid-rows-3 gap-4">
-		<div class="relative flex h-[200px] w-[clamp(350px,40vw,450px)] justify-between gap-4 bg-[#090a0ec6] p-4">
+	<div class="grid grid-cols-[200px] lg:grid-cols-2 2xl:grid-cols-3 gap-4">
+		<div class="relative flex h-[200px] w-[clamp(350px,40vw,400px)] justify-between gap-4 bg-[#090a0ec6] p-4">
 			<div class="flex flex-col justify-between">
 				<a href="/" class="click">
 					<LabelText>
@@ -40,9 +41,12 @@
 				</div>
 			</div>
 			<!-- Button add components -->
-			<button class="click absolute right-4 bottom-4 flex items-center gap-2 border-2 border-[var(--color-accent)] bg-[var(--color-header)] px-3 py-2 text-[11px] uppercase"><Svg name="add" size={18} />пополнить</button>
+			<Button {...{class: 'absolute right-4 bottom-4'}}>
+				<Svg name="add"/>
+				<p class="text-[11px] uppercase">пополнить</p>
+			</Button>
 		</div>
-		<div class="row-start-2 flex max-h-[140px] w-[clamp(350px,40vw,450px)] flex-col items-center bg-[#090a0ec6]">
+		<div class="row-start-2 flex max-h-[140px] w-[clamp(350px,40vw,400px)] flex-col items-center bg-[#090a0ec6]">
 			<h3 class="mt-2 text-[16px] font-bold uppercase">Лучший дроп</h3>
 			<div class="flex items-center justify-between gap-4">
 				<div class="flex w-1/2 flex-col gap-1">
@@ -56,7 +60,7 @@
 				<img src="https://cdn.case-battle.life/images/skin/2129/middle-5c793dc886662.png" alt="" class="w-1/3" />
 			</div>
 		</div>
-		<div class="col-start-2 flex max-h-[250px] w-[clamp(350px,40vw,450px)] flex-col gap-3 bg-[#090a0ec6] p-4">
+		<div class="col-start-2 flex max-h-[250px] w-[clamp(350px,40vw,400px)] flex-col gap-3 bg-[#090a0ec6] p-4">
 			<div class="flex w-full justify-between">
 				<span>
 					<h3 class="text-[16px] font-bold uppercase">Статистика</h3>
@@ -87,19 +91,30 @@
 				<p class="whitesrape-nowrap text-[12px] text-[var(--color-gray)]">2 предмета</p>
 			</div>
 		</div>
-        {#snippet card(title, desc, name)}
-            <div class="w-[clamp(350px,40vw,450px)] max-h-[250px] p-4 flex flex-col gap-2 bg-[#090a0ec6]">
-                <div class="flex justify-between">
-                    <span class="flex flex-col gap-2">
-                        <h3 class="font-bold">{title}</h3>
-                        <p class="text-[12px] text-[var(--color-gray)]">{desc}</p>
-                    </span>
-                    <Svg {name}/>
-                </div>
-            </div>
-        {/snippet}
-        {@render card('TRADE URL', 'Трейд-ссылка сохранена', 'link')}
-        {@render card('Персональный', 'купон', '')}
-        {@render card('E-mail добавлен', 'получайте купоны', '')}
+		<ProfileCard 
+			title="TRADE URL" 
+			desc="Трейд-ссылка сохранена" 
+			name="link" 
+			placeholder="Введите ссылку трейла" 
+			text="обновить"
+			href="/"
+			label="Узнать Trade-ссылку можно здесь"
+		/>
+			<ProfileCard 
+			title="Персональный" 
+			desc="купон" 
+			name="descount" 
+			placeholder="Введите код купона" 
+			text="применить"
+			label="Что такое персональный купон"
+		/>
+			<ProfileCard 
+			title="E-mail добавлен" 
+			desc="получайте купоны" 
+			name="mailAdd" 
+			placeholder="Введите email" 
+			text="подтвердить"
+			label="E-Mail подтверждён"
+		/>
 	</div>
 </div>

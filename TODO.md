@@ -5,6 +5,7 @@
 - add amination cases
 - add hot key in project
 - поченить monay
+- grid cols поченить
 
 <!-- Svelte.doc -->
 
