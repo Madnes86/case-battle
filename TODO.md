@@ -3,5 +3,9 @@
 - fix: check main layout bg-header
 - move translateCases()
 - add amination cases
-- add hot key in project 
+- add hot key in project
 - поченить monay
+
+<!-- Svelte.doc -->
+
+- [ ] Spread props

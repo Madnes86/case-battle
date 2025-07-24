@@ -1,6 +1,6 @@
 <script lang="ts">
-    import { FAQS }  from '$lib/data/faqs';
-    import { Faqs }   from '$lib/components';
+	import { FAQS } from '$lib/data/faqs';
+	import { Faqs } from '$lib/components';
 </script>
 
-    <Faqs data={FAQS} />
+<Faqs data={FAQS} />
