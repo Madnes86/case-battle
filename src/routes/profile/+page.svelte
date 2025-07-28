@@ -102,11 +102,11 @@
 					<p>945</p>
 				</LabelText>
 				<LabelText>
-					<img src="icon/upgrade.svg" alt="" class="h-8" />
+					<div class="h-8 w-5 bg-[var(--color-accent)] [mask-image:url('icon/upgrade.svg')] [mask-repeat: no-repeat] [mask-size:contain]"></div>
 					<p>337</p>
 				</LabelText>
 				<LabelText>
-					<img src="icon/contract.svg" alt="" class="h-8" />
+					<div class="h-8 w-8 bg-[var(--color-accent)] [mask-image:url('icon/contract.svg')] [mask-repeat: no-repeat] [mask-size:contain]"></div>
 					<p>18</p>
 				</LabelText>
 			</div>
