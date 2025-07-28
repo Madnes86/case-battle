@@ -7,7 +7,8 @@
     } : {
         children : Snippet
         class?: string
-    } = $props()
+    } = $props();
+    
 </script>
 
 <button class="px-3 py-1 flex items-center gap-2 border-2 border-[var(--color-accent)] bg-[var(--color-header)] click {rest.class}">

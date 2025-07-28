@@ -2,13 +2,40 @@
 	import { Svg, LabelText, Button, ProfileCard } from '$lib/components';
 
 	let src = 'https://cdn.case-battle.life/images/user/6813/3406579/thumb-6870bbb493bf5.jpg';
+	const PROFILE_CARDS = [
+		{
+			title: 'TRADE URL',
+			desc: 'Трейд-ссылка сохранена',
+			name: 'link',
+			placeholder: 'Введите ссылку трейда',
+			text: 'обновить',
+			href: '/',
+			label: 'Узнать Trade-ссылку можно здесь'
+		},
+		{
+			title: 'Персональный',
+			desc: 'купон',
+			name: 'descount',
+			placeholder: 'Введите код купона',
+			text: 'применить',
+			label: 'Что такое персональный купон'
+		},
+		{
+			title: 'E-mail добавлен',
+			desc: 'получайте купоны',
+			name: 'mailAdd',
+			placeholder: 'Введите email',
+			text: 'подтвердить',
+			label: 'E-mail подтвержден'
+		}
+	]
 
 </script>
 
 <div class="m-auto mt-[68px] flex max-w-[1300px] flex-col items-center bg-[var(--color-main)] bg-[url(https://case-battle.life/img/bg_case.webp)] bg-contain bg-no-repeat p-2 md:mt-0">
 	<h1 class="my-4 text-[24px] uppercase">Профиль</h1>
-	<div class="grid grid-cols-[200px] lg:grid-cols-2 2xl:grid-cols-3 gap-4">
-		<div class="relative flex h-[200px] w-[clamp(350px,40vw,400px)] justify-between gap-4 bg-[#090a0ec6] p-4">
+	<div class="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-4">
+		<div class="relative flex h-[200px] max-w-100 w-full justify-between gap-4 bg-[#090a0ec6] p-4">
 			<div class="flex flex-col justify-between">
 				<a href="/" class="click">
 					<LabelText>
@@ -36,8 +63,9 @@
 			<img {src} alt="" class="my-auto h-25 rounded-full border-2 border-[var(--color-accent)] object-cover" />
 			<div class="flex flex-col justify-between">
 				<div class="flex flex-col items-end gap-2">
-					<a href="/" class="click flex items-center gap-2 text-[12px] text-[var(--color-gray)] uppercase">НАСТРОЙКИ<Svg name="settings" size={18} stroke="var(--color-gray)" /></a>
-					<a href="/" class="click flex items-center gap-2 text-[12px] text-[var(--color-gray)] uppercase">Выход<Svg name="exit" size={18} stroke="var(--color-gray)" /></a>
+					{#each [{text: 'Настройки', name: 'settings'}, {text: 'Вход', name: 'exit'}] as {text, name} }
+						<a href="/" class="click flex items-center gap-2 text-[12px] text-[var(--color-gray)] uppercase">{text}<Svg {name} size={18} stroke="var(--color-gray)" /></a>
+					{/each}
 				</div>
 			</div>
 			<!-- Button add components -->
@@ -46,7 +74,7 @@
 				<p class="text-[11px] uppercase">пополнить</p>
 			</Button>
 		</div>
-		<div class="row-start-2 flex max-h-[140px] w-[clamp(350px,40vw,400px)] flex-col items-center bg-[#090a0ec6]">
+		<div class="flex max-h-[200px] max-w-100 w-full flex-col items-center bg-[#090a0ec6]">
 			<h3 class="mt-2 text-[16px] font-bold uppercase">Лучший дроп</h3>
 			<div class="flex items-center justify-between gap-4">
 				<div class="flex w-1/2 flex-col gap-1">
@@ -60,7 +88,7 @@
 				<img src="https://cdn.case-battle.life/images/skin/2129/middle-5c793dc886662.png" alt="" class="w-1/3" />
 			</div>
 		</div>
-		<div class="col-start-2 flex max-h-[250px] w-[clamp(350px,40vw,400px)] flex-col gap-3 bg-[#090a0ec6] p-4">
+		<div class="flex max-h-[250px]  max-w-100 w-full flex-col gap-3 bg-[#090a0ec6] p-4">
 			<div class="flex w-full justify-between">
 				<span>
 					<h3 class="text-[16px] font-bold uppercase">Статистика</h3>
@@ -91,30 +119,8 @@
 				<p class="whitesrape-nowrap text-[12px] text-[var(--color-gray)]">2 предмета</p>
 			</div>
 		</div>
-		<ProfileCard 
-			title="TRADE URL" 
-			desc="Трейд-ссылка сохранена" 
-			name="link" 
-			placeholder="Введите ссылку трейла" 
-			text="обновить"
-			href="/"
-			label="Узнать Trade-ссылку можно здесь"
-		/>
-			<ProfileCard 
-			title="Персональный" 
-			desc="купон" 
-			name="descount" 
-			placeholder="Введите код купона" 
-			text="применить"
-			label="Что такое персональный купон"
-		/>
-			<ProfileCard 
-			title="E-mail добавлен" 
-			desc="получайте купоны" 
-			name="mailAdd" 
-			placeholder="Введите email" 
-			text="подтвердить"
-			label="E-Mail подтверждён"
-		/>
+		{#each PROFILE_CARDS as {title, desc, name, placeholder, text, label}}
+			<ProfileCard {title} {desc} {name} {placeholder} {text} {label}/>
+		{/each}
 	</div>
 </div>

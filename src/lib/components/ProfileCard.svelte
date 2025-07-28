@@ -20,7 +20,7 @@
 
 </script>
 
-<div class="w-[clamp(350px,40vw,400px)] p-4 flex flex-col gap-4 justify-between bg-[#090a0ec6]">
+<div class=" max-w-100 w-full p-4 flex flex-col gap-4 justify-between bg-[#090a0ec6]">
     <div class="flex justify-between">
         <span class="flex flex-col">
             <h3 class="font-bold">{title}</h3>
