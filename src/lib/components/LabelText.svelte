@@ -1,10 +1,13 @@
 <script lang='ts'>
 	import type { Snippet } from "svelte";
 
+    // TODO: add rest
     let {
-        children
+        children,
+        ...rest
     } : {
         children : Snippet
+        class?: string
     } = $props();
 </script>
 

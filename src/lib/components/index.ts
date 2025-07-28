@@ -11,3 +11,4 @@ export { default as QuickProfile } from './QuickProfile.svelte';
 export { default as LabelText } from './LabelText.svelte';
 export { default as Button } from './Button.svelte';
 export { default as ProfileCard } from './ProfileCard.svelte';
+export { default as ProfileDrops } from './ProfileDrops.svelte';

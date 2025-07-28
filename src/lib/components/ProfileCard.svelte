@@ -27,6 +27,8 @@
     }
 </script>
 
+<!-- TODO: add description | link on switch  -->
+
 <svelte:window bind:innerWidth={windowWidth}/>
 
 <div class="max-w-100 w-full p-4 flex flex-col gap-4 justify-between bg-[#090a0ec6]">

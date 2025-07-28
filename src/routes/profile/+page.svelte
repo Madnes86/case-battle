@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Svg, LabelText, Button, ProfileCard } from '$lib/components';
+	import { Svg, LabelText, Button, ProfileCard, ProfileDrops } from '$lib/components';
 
 	let src = 'https://cdn.case-battle.life/images/user/6813/3406579/thumb-6870bbb493bf5.jpg';
 	const PROFILE_CARDS = [
@@ -28,7 +28,15 @@
 			text: 'подтвердить',
 			label: 'E-mail подтвержден'
 		}
-	]
+	];
+	function showSettings() {};
+	// TODO: придумать название
+	function deposit() {};
+	function showHistory() {};
+	function bestDrop() {};
+	function addTradeUrl() {};
+	function applyCoupon() {};
+	function addEmail() {};
 
 </script>
 
@@ -123,4 +131,5 @@
 			<ProfileCard {title} {desc} {name} {placeholder} {text} {label}/>
 		{/each}
 	</div>
+	<ProfileDrops />
 </div>
